@@ -50,17 +50,16 @@
 
 % can makebox also be used?
 \newcommand\headerview{
-\begin{minipage}{0.25\linewidth}
-    \profpic{0.22}{images/profilepicture}
-\end{minipage}% 
-\hfill
+
+%\hfill
+\centerline{
 \begin{minipage}{0.45\linewidth}
     \center \name \\[0.05cm] 
     \contact % address \ mobile \\ mail
 \end{minipage}
 }
+}
 
-%profilpicture
 
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
@@ -86,7 +85,7 @@
 \newcommand{\contact}{%
         {\small \@address  \cps \@mobile \\ \@mail%
         \\%
-        \linkedinview \cps \githubview \\ 
+        \githubview \\ 
         } % 
 }
 
@@ -100,7 +99,7 @@
 }
 
 \newcommand\coverlettersubview{
-\begin{tabular}{>{\scshape \bfseries \color{\@themecolor}}l  >{\small }l}
+\begin{tabular}{>{\scshape \bfseries \color{\@themecolor}}l  >{\small }l}
 Company: & \@companyname \\
 Position: & \@claimedposition \\
 \end{tabular}
@@ -144,6 +143,10 @@ Position: & \@claimedposition \\
 
 \newcommand{\explanation}[1]{%
     \mbox { \scshape \hspace{1.2em} \footnotesize #1}\\[0.05cm]
+}
+
+\newcommand{\explanationn}[2]{%
+    \mbox { \scshape \hspace{1.2em} \footnotesize \textbf{#1}  \hfill \datetext{#2}}\\[0.05cm] 
 }
 
 \newcommand{\explanationdetail}[1]{%
@@ -196,5 +199,3 @@ Position: & \@claimedposition \\
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
     \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/muratcankaracabey/latex_cv}{source code}}}
-
-
